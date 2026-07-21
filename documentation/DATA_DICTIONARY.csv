@@ -1,0 +1,42 @@
+column,group,data_type,unit_or_scale,description,source_or_processing_note
+time,identifier,datetime,Beijing Time UTC+8,Hourly timestamp interpreted as the end of the accumulation hour,Unified station-time key
+id,identifier,integer,none,Original meteorological station identifier,Identifier retained unchanged in public release
+lon,location,float,decimal degrees east,Privacy-protected public longitude rounded to four decimals,Approximately 1-2 km from private source coordinate
+lat,location,float,decimal degrees north,Privacy-protected public latitude rounded to four decimals,Approximately 1-2 km from private source coordinate
+PRE_1h,target,float,mm,Station-observed hourly precipitation amount,Physical value; not normalized in the released CSV files
+TAIR,near_surface_meteorology,float,normalized dimensionless,Near-surface air temperature feature,Tianqing analysis; legacy min-max preprocessing
+DEWP,near_surface_meteorology,float,normalized dimensionless,Dew-point temperature feature,Tianqing analysis; legacy min-max preprocessing
+PAIR,near_surface_meteorology,float,normalized dimensionless,Near-surface air-pressure feature,Tianqing analysis; legacy min-max preprocessing
+QAIR,near_surface_meteorology,float,normalized dimensionless,Specific-humidity feature,Tianqing analysis; legacy min-max preprocessing
+RHUS,near_surface_meteorology,float,normalized dimensionless,Relative-humidity feature,Tianqing analysis; legacy min-max preprocessing
+UWIN,near_surface_meteorology,float,normalized dimensionless,Near-surface zonal wind feature,Tianqing analysis; legacy min-max preprocessing
+VWIN,near_surface_meteorology,float,normalized dimensionless,Near-surface meridional wind feature,Tianqing analysis; legacy min-max preprocessing
+WIND,near_surface_meteorology,float,normalized dimensionless,Near-surface wind-speed feature,Tianqing analysis; legacy min-max preprocessing
+PRE,near_surface_meteorology,float,normalized dimensionless,Gridded precipitation auxiliary feature,Tianqing analysis; distinct from station target PRE_1h
+PoDu,terrain,float,normalized dimensionless,Terrain slope,Original degrees divided by 90 in legacy preprocessing
+PoXiang_x,terrain,float,normalized dimensionless,Transformed terrain-aspect sine component,Derived from terrain aspect then legacy-scaled
+PoXiang_y,terrain,float,normalized dimensionless,Transformed terrain-aspect cosine component,Derived from terrain aspect then legacy-scaled
+LandOver_10.0,land_cover,integer,0 or 1,Rainfed cropland indicator,One-hot code in GLC_FCS30/ESA-LCCS family
+LandOver_20.0,land_cover,integer,0 or 1,Irrigated or post-flooding cropland indicator,One-hot code in GLC_FCS30/ESA-LCCS family
+LandOver_52.0,land_cover,integer,0 or 1,Open evergreen broadleaf forest indicator,One-hot code in GLC_FCS30/ESA-LCCS family
+LandOver_62.0,land_cover,integer,0 or 1,Open deciduous broadleaf forest indicator,One-hot code in GLC_FCS30/ESA-LCCS family
+LandOver_71.0,land_cover,integer,0 or 1,Closed evergreen needleleaf forest indicator,One-hot code in GLC_FCS30/ESA-LCCS family
+LandOver_72.0,land_cover,integer,0 or 1,Open evergreen needleleaf forest indicator,One-hot code in GLC_FCS30/ESA-LCCS family
+LandOver_190.0,land_cover,integer,0 or 1,Urban or built-up area indicator,One-hot code in GLC_FCS30/ESA-LCCS family
+LandOver_210.0,land_cover,integer,0 or 1,Water-body indicator,One-hot code in GLC_FCS30/ESA-LCCS family
+lon_coding,location_encoding,float,dimensionless,Encoded public longitude,(public lon - 108.0) / 7.0
+lat_coding,location_encoding,float,dimensionless,Encoded public latitude,(public lat - 24.0) / 7.0
+Gem,terrain,float,m,Station or matched-grid elevation,Geographic auxiliary feature
+gpm,satellite_precipitation,float,mm h-1,Physical hourly GPM IMERG precipitation after temporal aggregation,13 missing values in complete table
+GPM,satellite_precipitation,float,normalized dimensionless,Normalized GPM model-input feature,Companion to physical gpm field
+VO_850,upper_level_circulation,float,s-1,Relative vorticity at 850 hPa,Documented ERA5 pressure-level route with station interpolation
+VO_500,upper_level_circulation,float,s-1,Relative vorticity at 500 hPa,Documented ERA5 pressure-level route with station interpolation
+feat_sin,jet_local_feature,float,dimensionless,Local sine component of encoded wind direction,Sampled from the jet/wind feature image at station location
+feat_cos,jet_local_feature,float,dimensionless,Local cosine component of encoded wind direction,Sampled from the jet/wind feature image at station location
+ejfi_3,jet_forcing,float,derived index,Effective Jet Forcing Index with sigma 3,Wind speed multiplied by Gaussian distance influence
+ejfi_5,jet_forcing,float,derived index,Effective Jet Forcing Index with sigma 5,Wind speed multiplied by Gaussian distance influence
+ejfi_8,jet_forcing,float,derived index,Effective Jet Forcing Index with sigma 8,Wind speed multiplied by Gaussian distance influence
+Jet_Emb_1,jet_morphology,float,latent feature,Jet morphological embedding component 1,Output of local MicroJetEncoder patch encoding
+Jet_Emb_2,jet_morphology,float,latent feature,Jet morphological embedding component 2,Output of local MicroJetEncoder patch encoding
+Jet_Emb_3,jet_morphology,float,latent feature,Jet morphological embedding component 3,Output of local MicroJetEncoder patch encoding
+Jet_Emb_4,jet_morphology,float,latent feature,Jet morphological embedding component 4,Output of local MicroJetEncoder patch encoding

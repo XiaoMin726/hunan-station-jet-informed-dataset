@@ -1,0 +1,10 @@
+# Dependencies imported by the three core source files.
+# This is a concise dependency guide rather than a frozen historical environment.
+numpy
+pandas
+scikit-learn
+torch
+pytorch-tabnet
+opencv-python
+scipy
+tqdm

@@ -1,0 +1,46 @@
+{
+  "output_coordinate_policy": "98 perturbed public station coordinates; coordinate coding recomputed from public coordinates",
+  "removed_columns": [],
+  "restored_model_columns": [
+    "LandOver_10.0",
+    "LandOver_20.0",
+    "LandOver_52.0",
+    "LandOver_62.0",
+    "LandOver_71.0",
+    "LandOver_72.0",
+    "LandOver_190.0",
+    "LandOver_210.0",
+    "VO_850",
+    "VO_500"
+  ],
+  "excluded_derived_columns": [
+    "era5_land_tp_mm"
+  ],
+  "added_columns": {},
+  "files": [
+    {
+      "source": "train_dataset.csv",
+      "output": "train_dataset_final.csv",
+      "rows_before": 206673,
+      "rows_after": 206671,
+      "exact_duplicates_removed": 2,
+      "columns_after": 41
+    },
+    {
+      "source": "train.csv",
+      "output": "train_final.csv",
+      "rows_before": 165338,
+      "rows_after": 165336,
+      "exact_duplicates_removed": 2,
+      "columns_after": 41
+    },
+    {
+      "source": "test.csv",
+      "output": "test_final.csv",
+      "rows_before": 41335,
+      "rows_after": 41335,
+      "exact_duplicates_removed": 0,
+      "columns_after": 41
+    }
+  ]
+}
