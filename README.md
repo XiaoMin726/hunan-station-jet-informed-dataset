@@ -15,7 +15,6 @@ dictionary, and quality-control records.
 - `station_hourly_all_2021_2023.csv`: complete processed station-hour table.
 - `station_hourly_training_set.csv`: fixed training split.
 - `station_hourly_test_set.csv`: fixed test split.
-- `station_metadata_public_98_stations.csv`: public station metadata.
 - `quality_control_report.json`: structural and cross-file validation results.
 - `release_processing_qc.json`: release-processing and duplicate-removal record.
 
