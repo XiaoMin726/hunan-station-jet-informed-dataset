@@ -31,7 +31,6 @@ dictionary, and quality-control records.
 - `DATA_README.md`: dataset scope, time convention, coordinate policy, scaling,
   and missing-value notes.
 - `DATA_DICTIONARY.csv`: definitions for all 41 columns.
-- `SHA256SUMS.txt`: integrity hashes for the deposited files.
 
 ## Time and coordinates
 
